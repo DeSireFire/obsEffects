@@ -1,0 +1,86 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>粒子背景动画插件</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		body::-webkit-scrollbar {
+			display: none;
+		}
+		/*.canvas {*/
+        /*    background: black;*/
+        /*}*/
+	</style>
+	<script src="js/particle.js"></script>
+</head>
+<body style="">
+<canvas width="1536" height="722" class="canvas"></canvas>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/particle.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	let c = new Cbg({
+		container: ".canvas",
+		//随机生成动画，默认无控制
+		control: "auto",
+		autoCustom: true, //自定义auto模式，只在control: "auto"有效
+		autoCustomNum: 100, //自定义粒子个数，只在control: "auto"有效
+		//鼠标跟随控制
+		//control: "mouse",
+		//坐标点定位控制
+		//control: "coordinate",
+		//设置坐标点，默认屏幕中心，坐标点定位控制时使用
+		//x: $(window).width() / 2,
+		//y: $(window).height() / 2,
+		//Canvas宽度高度自定义,默认全屏
+		width: $(window).width(),
+		height: $(window).height(),
+		//生成点尺寸设置
+		//size: [初始大小, 尺寸衰减速率（数值越大，尺寸缩减越快，反之越慢，最小不得小于0.01）,初始大小随机化],
+		size: [10, 0, false],
+		//生成点的类型，type
+		//type：color 生成点为颜色块
+		type: "color",
+		//生成点颜色列表，随机刷新颜色
+		color: ["rgba(101, 37, 238,1)", "rgb(0, 122, 255,1)", "rgb(255, 165,0, 1)", "rgb(255, 69,0, 1)"],
+		//生成点颜色单值，固定颜色刷新
+		//color: "red",
+
+		//type：img 生成点为图片，图片比例1：1
+		//type: "img",
+		//生成点图片列表，随机刷新图片
+		//imgUrl: ["图片路径", "图片路径"，....],
+		//生成点图片单值，固定图片刷新
+		//imgUrl: "图片路径",
+
+		//生成点生成速率，数值越大，点的生成越慢
+		interval_time: 1,
+		//动画类型：
+		//animation_type: 0（默认动画，随机方位，随机方向）
+		//animation_type: 1（向左运动）
+		//animation_type: 2（向右运动）
+		//animation_type: 3（向下运动）
+		//animation_type: 4（向上运动）
+		//animation_type: 5（向左上运动）
+		//animation_type: 6（向左下运动）
+		//animation_type: 7（向右上运动）
+		//animation_type: 8（向右下运动）
+		animation_type: {
+			type: 8, //动画类型
+
+			Israndom: true //开启离散效果
+		},
+		//粒子移动速度
+		speed: 10,
+		//边界控制
+		IsboundaryControl: true
+
+	})
+
+</script>
+
+</body>
+</html>

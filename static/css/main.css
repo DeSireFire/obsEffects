@@ -1,0 +1,23 @@
+.main-center {
+    margin: 10% auto 0;
+    /*background-color: #f0f0f0;*/
+    padding: 5% 5%;
+    border-radius: 10px
+}
+
+.height-center {
+    height: 100vh;
+}
+
+/* 卡片 */
+.card {
+    border: none;!important;
+}
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

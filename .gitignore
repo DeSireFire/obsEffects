@@ -1,0 +1,6 @@
+.well-known
+.htaccess
+.user.ini
+.DS_Store
+*.iml
+*.xml
