@@ -18,7 +18,7 @@
             <div id="moe-ca" class="row text">
                 <div v-for="item in effs" class="col-md-3 ">
                     <div class="card mb-4 shadow-sm">
-                        <img class="bd-placeholder-img card-img-top" :src="['effects/'+item.pathName+'/cover.png']" alt="">
+                        <a :href="['effects/'+item.pathName]"><img class="bd-placeholder-img card-img-top" :src="['effects/'+item.pathName+'/cover.png']" alt=""></a>
                         <div class="card-body">
                             <p><b>{{item.name}}</b></p>
                             <span v-for="p in item.intro" class="card-text">{{p}}</span>
