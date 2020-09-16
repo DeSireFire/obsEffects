@@ -1,3 +1,21 @@
+/* 滚动槽 */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background: rgba(0,0,0,0.06);
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.08);
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: rgba(0,0,0,0.12);
+    -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* css 主题 */
 .main-center {
     margin: 10% auto 0;
     /*background-color: #f0f0f0;*/
@@ -31,19 +49,10 @@
     user-select: none;
 }
 /* markdown页内样式 */
-
-#modal-container .md-title {
-    color: #004085;
-    background-color: #cce5ff;
-    border-color: #b8daff;
-    border-radius: 5px;
-}
-#markdown-content {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: rgba(255, 192, 203, 0.82);
-    border-radius: 5px;
-    padding: 2%;
+.model-body {
+    width:80%;
+    height:680px;
+    overflow:auto;
 }
 .line {
     border-top: 4px solid #fcac45;
@@ -52,8 +61,4 @@
     /*text-align: center;*/
     /*margin: 0 auto;*/
     /*margin-top: 20px;*/
-}
-.markdown-body h1, .markdown-body h2 {
-    padding-bottom: .3em;
-    border-bottom: 1px solid #eaecef;
 }

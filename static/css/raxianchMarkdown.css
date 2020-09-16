@@ -1,0 +1,53 @@
+#modal-container .md-title {
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+    border-radius: 5px;
+}
+#markdown-content {
+    color: #FFFF99;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 204, 204, 0.92);
+    border-radius: 5px;
+    padding: 2%;
+}
+
+.markdown-body {
+    overflow:auto;
+}
+.markdown-body h1, .markdown-body h2 {
+    color: #CCFFFF;
+    padding-bottom: .3em;
+    border-bottom: 5px solid #eaecef;
+}
+.markdown-body pre {
+    font-size: 87.5%;
+    color: #e83e8c;
+    word-wrap: break-word;
+    padding: 16px;
+    overflow: auto;
+    /*font-size: 85%;*/
+    line-height: 1.45;
+    background-color: #CCCCFF;
+    /*color: #f6f8fa;*/
+    border-radius: 6px;
+    border-top: 25px rgba(103, 103, 238, 0.95) solid;
+}
+.markdown-body strong {
+    padding: 5px;
+    font-size: 85%;
+    line-height: 1.45;
+    color: #FF9966;
+    border-radius: 6px;
+}
+.markdown-body li {
+    line-height:25px;
+    width: 80%;
+}
+.markdown-body li>img {
+    width: 80%;
+    height: auto;
+}
+

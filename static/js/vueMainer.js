@@ -13,6 +13,7 @@ const caList = {
     ],
     readme:"",
     effectName:"",
+    pathName:"",
 };
 
 const moeCa = new Vue({
@@ -20,11 +21,12 @@ const moeCa = new Vue({
     data: caList,
     // created:{},
     methods:{
-        toReadme(name,value) {
-            console.log(name,value);
+        toReadme(name,value,pathName) {
+            console.log(name,value,pathName);
             // this.effectName = name
             this.readme = this.readFile(value)
             this.effectName = name
+            this.pathName = pathName
         },
         readFile(filePath) {
             // 创建一个新的xhr对象

@@ -6,6 +6,7 @@
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/css/main.css">
     <link rel="stylesheet" href="static/css/cssBtn.css">
+    <link rel="stylesheet" href="static/css/raxianchMarkdown.css">
     <title>OBS特效小插件</title>
 </head>
 <body>
@@ -18,7 +19,9 @@
             <div id="moe-ca" class="row text">
                 <div v-for="item in effs" class="col-md-3 ">
                     <div class="card mb-4 shadow-sm">
-                        <a :href="['effects/'+item.pathName]"><img class="bd-placeholder-img card-img-top" :src="['effects/'+item.pathName+'/cover.png']" alt=""></a>
+                        <a :href="['effects/'+item.pathName]">
+                            <img class="bd-placeholder-img card-img-top" :src="['effects/'+item.pathName+'/cover.png']" alt="">
+                        </a>
                         <div class="card-body">
                             <p><b>{{item.name}}</b></p>
                             <span v-for="p in item.intro" class="card-text">{{p}}</span>
@@ -27,7 +30,7 @@
                                     <a type="button" class="btn btn-sm btn-outline-secondary" :href="['effects/'+item.pathName]">
                                         演示效果
                                     </a>
-                                    <div @click="toReadme(item.name, 'effects/'+item.pathName+'/readme.md')" data-modal-effect="one" type="button" class="readme btn btn-sm btn-outline-secondary">
+                                    <div @click="toReadme(item.name,'effects/'+item.pathName+'/readme.md', item.pathName)" data-modal-effect="one" type="button" class="readme btn btn-sm btn-outline-secondary">
                                         使用说明
                                     </div>
                                 </div>
@@ -38,22 +41,22 @@
                 </div>
                 <div id="modal-container">
                     <div class="modal-background">
-                        <div class="modal">
+                        <div class="modal model-body">
                             <div class="md-title">
                                 <h1>{{ effectName }} 使用说明书</h1>
                             </div>
                             <div class="line"></div>
-                            <div id="markdown-content" :data-readme=readme class="text-justify markdown-body"></div>
-                            <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
-                                <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
-                            </svg>
+<!--                            <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">-->
+<!--                                <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>-->
+<!--                            </svg>-->
+                            <div id="markdown-content" :data-readme=readme :data-path-name=pathName class="text-justify markdown-body"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <a href=""></a>
 
     <!--导入外链JS-->
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
