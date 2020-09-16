@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+<title>彩跃变字</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<p id="offscreen-text" class="offscreen-text"></p>
+<p id="text" class="text"></p>
+<svg id="svg"> </svg>
+<input type="text" class="input" id="input" value="" />
+
+<script src='js/CSSPlugin.min.js'></script> 
+<script src='js/EasePack.min.js'></script> 
+<script src='js/TweenLite.min.js'></script> 
+<script  src="js/index.js"></script>
+<script>
+    function getQueryString(name) {
+        let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        let r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return decodeURIComponent(r[2]);
+        };
+        return null;
+    };
+    document.getElementById("input").value=getQueryString("text")
+</script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>西瓜时钟</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+    body {
+      /*background-color: #74c4c8;*/
+      margin: 0;
+    }
+
+    .wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .face {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70vmin;
+      height: 70vmin;
+      border-radius: 50%;
+      position: relative;
+      background: radial-gradient(ellipse at center, #ec7277, #ec7277 60%, #e1ecde calc( 60% + 1px ), #e1ecde 63%, #079554 calc( 63% + 1px ), #079554 68%, #056e3e calc( 68% + 1px ));
+      /*box-shadow: -0.3vmin -0.3vmin 0.1vmin #e1ecde, 3vmin 3vmin 0.1vmin #44a7ac;*/
+    }
+    .face:after {
+      content: '';
+      display: block;
+      width: 3.5vmin;
+      height: 3.5vmin;
+      border-radius: 50%;
+      background-color: #f8ccce;
+      position: absolute;
+    }
+
+    .quarter {
+      height: 80%;
+      width: 80%;
+      position: absolute;
+    }
+    .quarter div {
+      height: 10%;
+      width: 2.4%;
+      border-radius: 1vmin;
+      background-color: #c41a21;
+      position: absolute;
+    }
+    .quarter div:nth-child(even) {
+      top: 45%;
+      transform: rotate(90deg);
+    }
+    .quarter div:nth-child(odd) {
+      left: 48.8%;
+    }
+    .quarter div:nth-child(1) {
+      top: 0;
+    }
+    .quarter div:nth-child(2) {
+      right: 3%;
+    }
+    .quarter div:nth-child(3) {
+      bottom: 0;
+    }
+    .quarter div:nth-child(4) {
+      left: 3%;
+    }
+
+    .seeds {
+      width: 85%;
+      height: 85%;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+    }
+    .seeds div {
+      display: block;
+      height: 3.5vmin;
+      width: 2vmin;
+      background-color: #e32f36;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      position: absolute;
+    }
+    .seeds div:nth-child(1) {
+      top: 62%;
+      left: 6%;
+      transform: rotate(296deg);
+    }
+    .seeds div:nth-child(2) {
+      top: 55%;
+      left: 12%;
+      transform: rotate(166deg);
+    }
+    .seeds div:nth-child(3) {
+      top: 56%;
+      left: 18%;
+      transform: rotate(226deg);
+    }
+    .seeds div:nth-child(4) {
+      top: 16%;
+      left: 24%;
+      transform: rotate(285deg);
+    }
+    .seeds div:nth-child(5) {
+      top: 9%;
+      left: 30%;
+      transform: rotate(277deg);
+    }
+    .seeds div:nth-child(6) {
+      top: 76%;
+      left: 36%;
+      transform: rotate(266deg);
+    }
+    .seeds div:nth-child(7) {
+      top: 40%;
+      left: 42%;
+      transform: rotate(100deg);
+    }
+    .seeds div:nth-child(8) {
+      top: 58%;
+      left: 48%;
+      transform: rotate(52deg);
+    }
+    .seeds div:nth-child(9) {
+      top: 49%;
+      left: 54%;
+      transform: rotate(168deg);
+    }
+    .seeds div:nth-child(10) {
+      top: 16%;
+      left: 60%;
+      transform: rotate(154deg);
+    }
+    .seeds div:nth-child(11) {
+      top: 81%;
+      left: 66%;
+      transform: rotate(234deg);
+    }
+    .seeds div:nth-child(12) {
+      top: 44%;
+      left: 72%;
+      transform: rotate(224deg);
+    }
+    .seeds div:nth-child(13) {
+      top: 38%;
+      left: 78%;
+      transform: rotate(132deg);
+    }
+    .seeds div:nth-child(14) {
+      top: 40%;
+      left: 84%;
+      transform: rotate(111deg);
+    }
+    .seeds div:nth-child(15) {
+      top: 9%;
+      left: 90%;
+      transform: rotate(53deg);
+    }
+
+    .hands div {
+      position: absolute;
+      bottom: 50%;
+      border-radius: 1vmin;
+      transform-origin: 50% 100%;
+      transform: rotate(0);
+    }
+    .hands div.h {
+      height: 27%;
+      width: 2.4%;
+      left: 48.8%;
+      background-color: #6f0f13;
+    }
+    .hands div.m {
+      height: 40%;
+      width: 2.4%;
+      left: 48.8%;
+      background-color: #a0161b;
+    }
+    .hands div.s {
+      height: 50%;
+      width: 1%;
+      left: 49.5%;
+      bottom: 40%;
+      transform-origin: 50% 80%;
+      background-color: #f8ccce;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="face">
+    <div class="seeds">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="quarter">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="hands">
+      <div class="m"></div>
+      <div class="h"></div>
+      <div class="s"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const sHand = document.querySelector('.s');
+  const mHand = document.querySelector('.m');
+  const hHand = document.querySelector('.h');
+
+  function setTime() {
+    const d = new Date();
+    const s = d.getSeconds();
+    const m = d.getMinutes();
+    const h = d.getHours();
+
+    const sDeg = (( s / 60 ) * 360 );
+    const mDeg = (( m / 60 ) * 360 );
+    const hDeg = (( h / 12 ) * 360 );
+
+    sHand.style.transform = `rotate( ${sDeg}deg )`;
+    mHand.style.transform = `rotate( ${mDeg}deg )`;
+    hHand.style.transform = `rotate( ${hDeg}deg )`;
+  }
+
+  setInterval( setTime, 1000 );
+</script>
+
+</body>
+</html>
