@@ -35,16 +35,18 @@
 
 * 在该页面URL处末尾添加 **?color=颜色** （注意？是英文的问号）
 
-颜色模式分为两种： **HEX颜色** 和 **RGB颜色**
+颜色模式分为两种： **HEX颜色** 和 **RGBA颜色**
 
 * HEX颜色 例如：  
 > https://effects.raxianch.moe/effects/canvasClock/?color=black
 
-* RGB颜色 例如：  
+* RGBA颜色 例如：  
 参数说明：**rgb(红色值,绿色值,蓝色值,透明度)**  
 > https://effects.raxianch.moe/effects/canvasClock/?color=rgb(255,182,193,0.3)
 
-(可以参考之后的 **颜色参考表**)
+(可以参考和使用hex颜色转换器 **hex转RBGA** **颜色参考表**)
+
+[点我，跳转颜色转换器](https://www.sioe.cn/yingyong/yanse-rgb-16/)
 
 ## 颜色参考表
 | 颜色 | 英文代码                 | 形象描述         | 十六进制     | RGB         |
